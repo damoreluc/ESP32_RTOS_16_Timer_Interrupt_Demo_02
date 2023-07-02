@@ -1,8 +1,11 @@
 /*
  * FreeRTOS Esempio 16: sincronizzazione tra interrupt da timer hardware e task mediante sezione critica.
  *
- * Acquisizione A/D nella ISR del timer hardware, periodo 100ms e sincronizzazione con task
- * mediante sezione critica (mutex di tipo spinlock)
+ * Aggiornamento di una variabile nella ISR del timer hardware, periodo 100ms;
+ * 
+ * In un task viene stampata e decrementata la stessa variabile.
+ * 
+ * Protezione delle sezioni critiche nella ISR e nel task mediante mutex di tipo spinlock.
  *
  * Il task ha un tempo di ciclo di 2000ms, quindi la ISR verrà eseguita più volte durante ogni ciclo del task
  *
